@@ -37,7 +37,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       }
       try {
     // call filterImageFromURL(image_url) to filter the image and https://sourceforge.net/projects/unxutils/
-        const imagePath= await filterImageFromURL( "image_url" )
+        const imagePath = await filterImageFromURL( image_url ) //image_Url should be variable not string
         return res.status(200).sendFile(imagePath, async (error)=>{
           await deleteLocalFiles ([imagePath])
         });
